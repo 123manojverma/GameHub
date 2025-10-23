@@ -1,5 +1,6 @@
 import { type Metadata } from 'next'
 import { dark } from '@clerk/themes'
+import { Toaster } from 'sonner'
 import {
   ClerkProvider,
   SignInButton,
@@ -55,6 +56,7 @@ export default function RootLayout({
               <UserButton />
             </SignedIn>
           </header>
+          <Toaster theme='light' position='bottom-center'/>
           {children}
           </ThemeProvider>
         </body>
