@@ -38,6 +38,7 @@ export const VolumeControl=({
         <div className="flex items-center gap-2">
             <Hint label={label} asChild>
                 <button
+                    aria-label={label}
                     onClick={onToggle}
                     className="text-white hover:bg-white/10 p-1.5 rounded-lg"
                 >
