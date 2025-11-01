@@ -4,6 +4,11 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
 
   webpack: (config, { isServer, webpack }) => {
+    config.module.rules.push({
+      test:/\.mjs$/,
+      include:/node_modules/,
+      type:"javascript/auto"
+    })
     if (!isServer) {
       config.resolve.fallback = {
         ...config.resolve.fallback,
