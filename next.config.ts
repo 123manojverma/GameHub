@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: true,
+  images:{
+    domains:[
+      "utfs.io",
+    ]
+  },
 
   webpack: (config, { isServer, webpack }) => {
     config.module.rules.push({
