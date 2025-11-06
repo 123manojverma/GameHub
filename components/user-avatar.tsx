@@ -18,7 +18,7 @@ const avatarSizes=cva(
             },
         },
         defaultVariants:{
-            size:"default"
+            size:"defalult"
         },
     },
 );
@@ -60,7 +60,7 @@ export const UserAvatar = ({
   )
 }
 
-interface UserAvatarSkeletonProps extends VariantProps<typeof avatarSizes>{};
+type UserAvatarSkeletonProps = VariantProps<typeof avatarSizes>;
 
 export const UserAvatarSkeleton=({
     size

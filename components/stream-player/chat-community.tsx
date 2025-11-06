@@ -21,7 +21,7 @@ export const ChatCommunity=({
 }:ChatCommunityProps)=>{
 
     const [value,setvalue]=useState("")
-    const [debouncedValue,setdebouncedValue]=useDebounceValue<string>(value,500);
+    const [debouncedValue]=useDebounceValue<string>(value,500);
     const participants=useParticipants();
 
     const onChange=(newvalue:string)=>{

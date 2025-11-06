@@ -53,10 +53,10 @@ export const LiveVideo = ({
         }
     }
 
-    const handleFullscreenChange = () => {
-        const isCurrentlyFullscreen = document.fullscreenElement !== null;
-        setIsFullscreen(isCurrentlyFullscreen);
-    }
+    // const handleFullScreenChange = () => {
+    //     const isCurrentlyFullscreen = document.fullscreenElement !== null;
+    //     setIsFullscreen(isCurrentlyFullscreen);
+    // }
 
 
     const handleFullScreenChange = () => {

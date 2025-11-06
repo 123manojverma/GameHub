@@ -1,7 +1,6 @@
 "use client"
 
 import { useViewerToken } from "@/hooks/use-viewer-token";
-import { Stream, User } from "@prisma/client"
 import {LiveKitRoom} from "@livekit/components-react";
 import { Video, VideoSkeleton } from "./video";
 import { cn } from "@/lib/utils"
