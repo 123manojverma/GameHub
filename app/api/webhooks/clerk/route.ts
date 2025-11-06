@@ -1,3 +1,4 @@
+import { resetIngresses } from "@/actions/ingress";
 import { db } from "@/lib/db";
 import { verifyWebhook } from "@clerk/backend/webhooks";
 
@@ -48,6 +49,7 @@ export async function POST(request: Request) {
     }
 
     if(eventType==='user.deleted'){
+      await resetIngresses(id!);
       await db.user.delete({
         where:{
           externalUserId:id!
