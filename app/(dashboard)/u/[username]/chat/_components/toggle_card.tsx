@@ -10,7 +10,7 @@ type FieldTypes="isChatEnabled" | "isChatDelayed" | "isChatFollowersOnly"
 
 interface ToggleCardProps{
     label:string;
-    value:string;
+    value:boolean;
     field:FieldTypes
 }
 
