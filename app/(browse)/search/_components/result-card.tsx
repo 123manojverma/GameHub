@@ -2,7 +2,7 @@ import { Thumbnail, ThumbnailSkeleton } from "@/components/thumbnail"
 import { Skeleton } from "@/components/ui/skeleton"
 import { VerifiedMark } from "@/components/verified-mark"
 import { User } from "@prisma/client"
-import { formatDistanceToNow } from "date-fns"
+import { formatDistanceToNow } from "date-fns/formatDistanceToNow"
 import Link from "next/link"
 
 interface ResultCardProps {
