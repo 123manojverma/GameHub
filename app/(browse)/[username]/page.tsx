@@ -4,32 +4,35 @@ import { notFound } from "next/navigation";
 import { isBlocedByUser } from "@/lib/block-service";
 import { StreamPlayer } from "@/components/stream-player";
 
-interface UserPageProps{
-    params:{
-        username:string;
+interface UserPageProps {
+    params: {
+        username: string;
     };
 };
 
 
-const UserPage=async({
+const UserPage = async ({
     params
-}:UserPageProps)=>{
-    const user=await getUserByUsername(params.username);
-    if(!user || !user.stream){
+}: UserPageProps) => {
+    const { username } = params;
+    if (!username) notFound();
+    
+    const user = await getUserByUsername(username);
+    if (!user || !user.stream) {
         notFound();
     }
 
-    const isFollowing=await isFollowingUser(user.id);
-    const isBlocked=await isBlocedByUser(user.id)
+    const isFollowing = await isFollowingUser(user.id);
+    const isBlocked = await isBlocedByUser(user.id)
 
     // To block the user to can't see the page of who blocked him
-    if(isBlocked){
+    if (isBlocked) {
         notFound();
     }
 
     return (
         <div>
-            <StreamPlayer 
+            <StreamPlayer
                 user={user}
                 stream={user.stream}
                 isFollowing={isFollowing}

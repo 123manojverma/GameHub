@@ -36,12 +36,13 @@ export default function RootLayout({
     <ClerkProvider appearance={{
       baseTheme: [dark],
     }}>
-      <html lang="en">
+      <html lang="en" suppressHydrationWarning>
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
           <ThemeProvider 
           attribute="class"
           forcedTheme='dark'
           storageKey='gamehub-theme'
+          disableTransitionOnChange
           >
           <header className="flex justify-end items-center p-4 gap-4 h-16">
             <SignedOut>

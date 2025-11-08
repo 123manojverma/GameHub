@@ -18,9 +18,15 @@ export const Actions = async() => {
                 Exit
             </Link>
         </Button>
-        <UserButton>
-          afterSignOutUrl=&quot;/&quot;
-        </UserButton>
+      <UserButton
+        appearance={{
+          elements: {
+            avatarBox: "h-8 w-8",
+          },
+        }}
+        userProfileMode="modal"
+        afterSignOutUrl="/"
+      />
     </div>
   )
 }
